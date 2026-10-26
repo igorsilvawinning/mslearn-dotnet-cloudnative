@@ -1,0 +1,18 @@
+version: '3.4'
+
+services: 
+
+    frontend:
+        image: store:latest
+        environment: 
+            ProductEndpoint: http://host.docker.internal:32001
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+        ports:
+            - "32000:8080"
+        depends_on: 
+            - backend
+    backend:
+        image: products:latest
+        ports: 
+            - "32001:8080"
