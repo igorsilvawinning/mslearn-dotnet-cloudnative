@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: productsbackend
-        image: codespacesdev/productservice:latest
+        image: igorlnsilva/productservice:latest
         ports:
         - containerPort: 80
         env:

@@ -1,3 +1,4 @@
+// using Microsoft.Extensions.Http.Resilience;
 using Store.Components;
 using Store.Services;
 
@@ -10,6 +11,11 @@ builder.Services.AddHttpClient<ProductService>(c =>
 
     c.BaseAddress = new(url);
 });
+// .AddStandardResilienceHandler(options =>
+// {
+//     options.Retry.MaxRetryAttempts = 7;
+//     options.TotalRequestTimeout.Timeout = TimeSpan.FromMinutes(5);
+// });
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
